@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\CarController;
-use App\Http\Controllers\ShowCarController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SumContoller;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -37,3 +38,12 @@ Route::get('/sum/{a}/{b}', function (float $a, float $b) {
 
 Route::get('/car/invokable', CarController::class);
 Route::get('/car', [CarController::class , 'index']);
+
+
+// Route::resource('/products', ProductController::class)
+//     ->except(['destroy']);
+
+Route::resource('/products', ProductController::class)
+    ->only(['index', 'show']);
+
+Route::get('/sum/{a}/{b}', [SumContoller::class , 'sumNumbers']);
