@@ -11,4 +11,9 @@ class SumContoller extends Controller
     {
         return $a + $b;
     }
+
+    public function subNumbers(float $a, float $b)
+    {
+        return $a - $b;
+    }
 }
