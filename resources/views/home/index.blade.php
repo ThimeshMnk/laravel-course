@@ -1,10 +1,17 @@
 <div>
     <h1 class="text-3xl font-bold underline">Hello world!</h1>
 </div>
-<p>My Name is {{ $name }} {{ $surname }}</p>
-<p> Year : {{ $year }}</p>
 
-<p>{{ strtoupper($name . '' . $surname) }}</p>
-<p>{{ Illuminate\Support\str::after('Hello World', 'Hello') }}</p>
-<p>{{PHP_VERSION}}</p>
-<p>{!! $job !!}</p>
+<script>
+  const hobbies = {{\Illuminate\Support\Js::from($hobbies)}};
+</script>
+
+@verbatim
+    <div>
+
+        Name: {{ name }}
+        Age: {{ age }}
+        Job: {{ job }}
+        Hobbies: {{ Hobbies }}
+    </div>
+@endverbatim
